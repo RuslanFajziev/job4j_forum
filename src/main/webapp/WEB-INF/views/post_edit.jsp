@@ -37,9 +37,9 @@
                     <div class="form-group">
                         <input type='hidden' name='id' id='id' value=<c:out value="${post.getId()}"/>>
                         <label>Тема:</label>
-                        <input type="text" required class="form-control" name="name" value=<c:out value="${post.getName()}"/>>
+                        <input type="text" required class="form-control" name="name" value="<c:out value="${post.getName()}"/>">
                         <label>Содержимое объявления:</label>
-                        <input type="text" required class="form-control" name="description" value=<c:out value="${post.getDescription()}"/>>
+                        <input type="text" required class="form-control" name="description" value="<c:out value="${post.getDescription()}"/>">
                     </div>
                     <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>
