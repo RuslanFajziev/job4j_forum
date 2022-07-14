@@ -25,6 +25,9 @@
         <div class="card" style="width: 100%">
             <div class="card-header">
                 Объявления
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <a class="btn btn-secondary" href="<c:url value='/post_form'/>" role="button">Добавить объявление</a>
+                </div>
             </div>
             <div class="card-body">
                 <table class="table">

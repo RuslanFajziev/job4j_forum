@@ -2,25 +2,31 @@ package ru.job4j.forum.service;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.Post;
+import ru.job4j.forum.repository.PostRepos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 @Service
 public class PostService {
+    private PostRepos repos;
 
-    private final List<Post> posts = new ArrayList<>();
-
-    public PostService() {
-        posts.add(Post.of("Продаю тачку, ладу 2114.",
-                "Продаю тачку очень дешево"));
-        posts.add(Post.of("Продаю книгу.",
-                "Продаю книгу Война и Мир."));
-//        posts.add(Post.of("fsfsfsf_fsf_fsf",
-//                "dsd_dsdfsa"));
+    public PostService(PostRepos repos) {
+        this.repos = repos;
     }
 
-    public List<Post> getAll() {
-        return posts;
+    public Collection<Post> getPosts() {
+        return repos.getPosts();
+    }
+
+    public Post getPost(int id) {
+        return repos.getPost(id);
+    }
+
+    public Post savePost(Post postTmp) {
+        return repos.savePost(postTmp);
+    }
+
+    public void deletePost(Integer id) {
+        repos.deletePost(id);
     }
 }
