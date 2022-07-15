@@ -29,9 +29,8 @@ public class PostRepos {
             Integer idPost = POST_ID.incrementAndGet();
             postTmp.setId(idPost);
             return hashMapPosts.put(idPost, postTmp);
-        } else {
-            return hashMapPosts.put(postTmp.getId(), postTmp);
         }
+            return hashMapPosts.put(postTmp.getId(), postTmp);
     }
 
     public void deletePost(Integer id) {

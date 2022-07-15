@@ -24,10 +24,7 @@
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header">
-                Объявления
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <a class="btn btn-secondary" href="<c:url value='/post_form'/>" role="button">Добавить объявление</a>
-                </div>
+                Posts
             </div>
             <div class="card-body">
                 <table class="table">
@@ -37,15 +34,20 @@
                         <th scope="col">name</th>
                         <th scope="col">description</th>
                         <th scope="col">created</th>
+                        <th scope="col">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <a class="btn btn-success" href="<c:url value='/post_form'/>" role="button">Add post</a>
+                            </div>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${posts}" var="post">
                         <tr>
                             <td>
-                                <a href=/post_edit?id=<c:out value="${post.id}"/>>
-                                    <c:out value="${post.id}"/>
-                                </a>
+                                    <%--                                <a href=/post_edit?id=<c:out value="${post.id}"/>>--%>
+                                <c:out value="${post.id}"/>
+                                    <%--                                </a>--%>
                             </td>
                             <td>
                                 <c:out value="${post.name}"/>
@@ -55,6 +57,14 @@
                             </td>
                             <td>
                                 <c:out value="${post.created}"/>
+                            </td>
+                            <td>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <a class="btn btn-secondary active" href=/post_edit?id=<c:out value="${post.id}"/>
+                                       role="button">Edit</a>
+                                    <a class="btn btn-secondary" href=/post_delete?id=<c:out value="${post.id}"/>
+                                       role="button">Delete</a>
+                                </div>
                             </td>
                         </tr>
                     </c:forEach>

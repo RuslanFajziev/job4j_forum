@@ -38,4 +38,11 @@ public class BaseControl {
         model.addAttribute("posts", postService.getPosts());
         return "redirect:/";
     }
+
+    @GetMapping("/post_delete")
+    public String postDelete(Model model, int id) {
+        postService.deletePost(id);
+        model.addAttribute("posts", postService.getPosts());
+        return "redirect:/";
+    }
 }
