@@ -56,7 +56,7 @@
                                 <c:out value="${post.description}"/>
                             </td>
                             <td>
-                                <c:out value="${post.created}"/>
+                                <c:out value="${post.getCreatedForHtml()}"/>
                             </td>
                             <td>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
