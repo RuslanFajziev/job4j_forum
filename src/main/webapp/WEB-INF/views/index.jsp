@@ -23,7 +23,7 @@
 <div class="container pt-3">
     <div class="row">
         <div class="card" style="width: 100%">
-            <div class="card-header">
+            <div class="alert alert-info" role="alert">
                 Posts
             </div>
             <div class="card-body">
@@ -36,7 +36,8 @@
                         <th scope="col">created</th>
                         <th scope="col">
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <a class="btn btn-success" href="<c:url value='/post_form'/>" role="button">Add post</a>
+                                <a class="btn btn-success" active href="<c:url value='/post_form'/>" role="button">Add</a>
+                                <a class="btn btn-secondary" href="<c:url value='/logout'/>" role="button">Logout ${user.username}</a>
                             </div>
                         </th>
                     </tr>

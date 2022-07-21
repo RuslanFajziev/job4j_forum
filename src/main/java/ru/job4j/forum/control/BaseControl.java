@@ -15,11 +15,6 @@ public class BaseControl {
         this.postService = postService;
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
     @GetMapping("/post_form")
     public String postForm() {
         return "post_form";
