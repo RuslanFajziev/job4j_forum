@@ -10,9 +10,6 @@ CREATE TABLE authorities (
     authority VARCHAR(50) NOT NULL unique
 );
 
-insert into authorities (authority) values ('ROLE_USER');
-insert into authorities (authority) values ('ROLE_ADMIN');
-
 CREATE TABLE users (
     id serial primary key,
     username VARCHAR(50) NOT NULL unique,
